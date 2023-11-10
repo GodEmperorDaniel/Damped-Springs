@@ -26,10 +26,21 @@ public class DampedSpring : MonoBehaviour
         /// Resting length
         /// </summary>
         public float r;
+
+        public float deltaTime; 
     }
     void DampedSpringMotion(DampedSpringParameters parameters)
     {
-        
+        /// <summary>
+        /// damping ratio
+        /// </summary>
+        float zeta = parameters.beta / (2 * Mathf.Sqrt(parameters.mass * parameters.k));
+
+        if(zeta > 1)
+        {
+            //over-damped
+
+        }
     }
     void Update()
     {
